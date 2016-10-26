@@ -95,26 +95,51 @@ $(document).ready(function() {
 					
 					if(m === 0 && s === 0 && ms === 1){
 						var correctAnswers = $.cookie('correctAnswers');
-						
-						if(correctAnswers !== 'undefined' && correctAnswers < 10){
-							var message = "Te hicieron falta " + (10 - correctAnswers) + " de 10 respuestas correctas.";
-							swal("No lo lograste!!!", message, "error");
-							$("body").find('audio').remove();
-							$("body").append('<audio id="youLoser"><source src="sounds/youLoser.mp3" type="audio/mpeg"></source></audio>');
-							var audio = document.getElementById('youLoser');
-							audio.play();
-						}
-						
-						if(correctAnswers !== 'undefined' && correctAnswers === 10){
-							var message = "Felicitaciones, completaste el crucigrama.";
-							swal("Sos pilas, lo lograste!!!", message, "success");
-							$("body").find('audio').remove();
-							$("body").append('<audio id="wellDone"><source src="sounds/wellDone.mp3" type="audio/mpeg"></source></audio>');
-							var audio = document.getElementById('wellDone');
-							audio.play();
+						if(typeof correctAnswers != 'undefined')
+						{
+							var countAnswers = parseInt(correctAnswers);
+							
+							if(countAnswers < 2 ){
+								var message = "Te hicieron falta " + (10 - correctAnswers) + " de 10 respuestas correctas.";
+								swal({title: "No lo lograste!!!", text: message, type: "error"},function()
+								{
+									$("body").find('audio').remove();
+									$.cookie("correctAnswers",null);
+									window.location.href = 'index.html';
+								});
+								$("body").find('audio').remove();
+								$("body").append('<audio id="youLoser"><source src="sounds/youLoser.mp3" type="audio/mpeg"></source></audio>');
+								var audio = document.getElementById('youLoser');
+								audio.play();
+							}
+							
+							if(countAnswers === 2){
+								var message = "Felicitaciones, completaste el crucigrama.";
+								swal({title: "Sos pilas, lo lograste!!!", text: message, type: "success"},function()
+								{
+									$("body").find('audio').remove();
+									$.cookie("correctAnswers",null);
+									window.location.href = 'index.html';
+								});
+								$("body").find('audio').remove();
+								$("body").append('<audio id="wellDone"><source src="sounds/wellDone.mp3" type="audio/mpeg"></source></audio>');
+								var audio = document.getElementById('wellDone');
+								audio.play();
+							}
+						}else{
+								var message = "No adivinaste al menos una palabra :(";
+								swal({title: "Y entonces???!!!", text: message, type: "error"},function()
+								{
+									$("body").find('audio').remove();
+									$.cookie("correctAnswers",null);
+									window.location.href = 'index.html';
+								});
+								$("body").find('audio').remove();
+								$("body").append('<audio id="suicidebomb"><source src="sounds/suicidebomb.mp3" type="audio/mpeg"></source></audio>');
+								var audio = document.getElementById('suicidebomb');
+								audio.play();
 						}
 					}
-					
 					// loop
 					$.APP.t = setTimeout($.APP.loopTimer,1);
                 }

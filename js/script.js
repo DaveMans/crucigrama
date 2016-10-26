@@ -159,9 +159,32 @@
 					startx: 7,
 					starty: 9
 				}*/
-			] 
+			];
+
+		function getRandomArrayElements(arr, count) {
+			var shuffled = arr.slice(0), i = arr.length, min = i - count, temp, index;
+			while (i-- > min) {
+				index = Math.floor((i + 1) * Math.random());
+				temp = shuffled[index];
+				shuffled[index] = shuffled[i];
+				shuffled[i] = temp;
+			}
+			return shuffled.slice(min);
+		};
+			
+			
+			
+		var newWordsArray = getRandomArrayElements(puzzleData, 2);
 	
-		$('#puzzle-wrapper').crossword(puzzleData);
+		$.each(newWordsArray, function(key,value){
+			var min = 1, max = 10;
+			var newPosition = Math.floor(Math.random()*(max-min+1)+min);
+			
+			value.position = newPosition;
+				
+		});
+	
+		$('#puzzle-wrapper').crossword(newWordsArray);
 		
 	})
 	

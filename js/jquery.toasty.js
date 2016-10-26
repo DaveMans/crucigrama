@@ -18,6 +18,7 @@
 			$('#toasty-guy-dan').css('right', '-170px');
 			$('#toasty-guy-dan').css('bottom', '0px');
 			if(this.options.sound){
+				$("body").find('audio').remove();
 				$("body").append('<audio id="toasty-audio"><source src="'+ this.options.sound +'" type="audio/mpeg"></source></audio>');
  			}
  		},
