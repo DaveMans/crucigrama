@@ -20,6 +20,10 @@
 	<script>
 	  $(document).ready( function(){
 		  $.APP.startTimer('cd');
+		  
+		  $('#checkButton').click( function( event ) {
+			$.APP.validateAnswers();
+		  });
 	  });
 	</script>
 	<div class="container">
@@ -30,8 +34,14 @@
 			<span id="cd_ms">00</span>
 			<br/>
 			<br/>
+			<button id="checkButton" class="check">Validar respuestas</button>
+			<br/>
+			<br/>
 		</div>
 		<div id="puzzle-wrapper"></div>
+		<div class="footer">
+			<pre><code>Powered by DaveMan</code></pre>
+		</div>
 	</div>
 </body>
 </html>	
