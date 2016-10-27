@@ -222,15 +222,6 @@
 						
 					};	
 					
-					// Put entry number in first 'light' of each entry, skipping it if already present
-					for (var i=1, p = entryCount; i < p; ++i) {
-						$groupedLights = $('.entry-' + i);
-						if(!$('.entry-' + i +':eq(0) span').length){
-							$groupedLights.eq(0)
-								.append('<span>' + puzz.data[i].position + '</span>');
-						}
-					}	
-					
 					util.highlightEntry();
 					util.highlightClue();
 					$('.active').eq(0).focus();
@@ -265,12 +256,16 @@
 
 						solved.push(valToCheck);
 						solvedToggle = true;
+						
+						//updates the answer valu to true
 						puzz.data[activePosition].correct = true;
 						
+						//filter all items with correct answers
 						var newPuzzData = puzz.data.filter(function(index){
 							return index.correct === true;
 						});
 						
+						//creates cookie with the number of correct answers
 						var correctAnswers = newPuzzData.length.toString();
 						$.cookie("correctAnswers",correctAnswers);
 						
