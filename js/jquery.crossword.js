@@ -148,7 +148,6 @@
                 puzInit.buildEntries();
 
             },
-
             calcCoords: function () {
                 /*
                     Calculate all puzzle entry coordinates, put into entries array

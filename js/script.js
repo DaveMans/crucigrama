@@ -74,7 +74,7 @@
                 clue: "Acción y efecto de unir o unirse (juntar, combinar, atar o acercar dos o más cosas para hacer un todo, ya sea físico o simbólico)",
                 answer: "union",
                 position: 9,
-                orientation: "down",
+                orientation: "across",
                 startx: 1,
                 starty: 1,
                 correct: false
@@ -83,7 +83,7 @@
                 clue: "Son las siglas que definen MarKeTing",
                 answer: "mkt",
                 position: 10,
-                orientation: "down",
+                orientation: "across",
                 startx: 5,
                 starty: 1,
                 correct: false
@@ -142,7 +142,7 @@
                 clue: "Manera de comportarse una persona en una situación determinada o en general.",
                 answer: "comportamiento",
                 position: 17,
-                orientation: "across",
+                orientation: "down",
                 startx: 6,
                 starty: 4
             },
@@ -150,7 +150,7 @@
                 clue: "Proviene del latín cultus, hace referencia al cultivo del espíritu humano y de las facultades intelectuales del hombre.",
                 answer: "cultura",
                 position: 18,
-                orientation: "across",
+                orientation: "down",
                 startx: 12,
                 starty: 4
             },
@@ -158,7 +158,7 @@
                 clue: "Cosa producida natural o artificialmente, o resultado de un trabajo u operación.",
                 answer: "producto",
                 position: 19,
-                orientation: "across",
+                orientation: "down",
                 startx: 11,
                 starty: 5
             },
@@ -166,7 +166,7 @@
                 clue: "Trabajo, especialmente cuando se hace para otra persona.",
                 answer: "servicio",
                 position: 20,
-                orientation: "across",
+                orientation: "down",
                 startx: 10,
                 starty: 6
             }
