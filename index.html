@@ -10,11 +10,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Qurossword - A javascript crossword puzzle plugin</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+	<script src="js/jquery.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+	 <script>
+		function openCrossWord(){
+			var groupValue = $('#groupSelect').val();
+
+			var burl = "crossword.html?groupValue=" + groupValue ;
+			$('a').attr('href', burl); 
+		};
+    </script>
     <div class="divcontainer">
-        <a class="button" href="crossword.html">Comienza el Crucigrama!!!</a>
+		<select id="groupSelect" class="select-style">
+		  <option value="1">Grupo 1</option>
+		  <option value="2">Grupo 2</option>
+		  <option value="3">Grupo 3</option>
+		  <option value="4">Grupo 4</option>
+		</select>
+		<br />
+        <a class="button" href="#" onClick="openCrossWord(1);">Comienza el Crucigrama!!!</a>
     </div>
 
     <div class="footer">
