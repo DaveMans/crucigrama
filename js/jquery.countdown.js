@@ -38,7 +38,7 @@ $(document).ready(function () {
                     var correctAnswers = $.cookie('correctAnswers');
                     if (typeof correctAnswers !== "undefined" && correctAnswers !== "null") {
                         var countAnswers = parseInt(correctAnswers);
-                        var maxNumberOfItems = 10;
+                        var maxNumberOfItems = 6;
                         if (countAnswers < maxNumberOfItems) {
                             var message = "Te hicieron falta " + (maxNumberOfItems - correctAnswers) + " de " + maxNumberOfItems + " respuestas correctas.";
                             swal({ title: "No lo lograste!!!", text: message, type: "error" }, function () {
