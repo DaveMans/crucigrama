@@ -128,7 +128,7 @@ $(document).ready(function () {
                     $('#' + $.APP.dir + '_s').html($.APP.formatTimer(s));
                     $('#' + $.APP.dir + '_m').html($.APP.formatTimer(m));
 
-                    if (m === 0 && s === 30 && ms === 9) {
+                    if (m === 1 && s === 1 && ms === 9) {
                         //initialize jquery toasty js
                         $("body").toasty();
                         $("body").toasty('pop');
