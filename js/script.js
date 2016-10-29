@@ -183,7 +183,7 @@
             return shuffled.slice(min);
         };
 
-        var maxNumberOfItems = 10;
+        var maxNumberOfItems = 6;
         var newWordsArray = getRandomArrayElements(puzzleData, maxNumberOfItems);
 
         $.each(newWordsArray, function(key, value) {
